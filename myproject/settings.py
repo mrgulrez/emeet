@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=ven6r4v#_xt8m#wn4@6ar!+8*nk*@xsv()hab)&0_crdt2h6(
 DEBUG = True
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-=ven6r4v#_xt8m#wn4@6ar!+8*nk*@xsv()hab)&0_crdt2h6(')
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1').split(",")
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ovoting.onrender.com']
 
 
 
