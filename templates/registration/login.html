@@ -1,13 +1,21 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load tailwind_filters %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Log In{% endblock %}
 
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form|crispy }}
-  <button type="submit">Log In</button>
-</form>
-{% endblock %}
+<div class="max-w-md mx-auto p-8 bg-white rounded-md shadow-md mt-10">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Log In</h2>
+    <form method="post" class="space-y-4">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type='submit'
+            class="w-full text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md focus:outline-none">
+            Login
+        </button>
+    </form>
+    <div class="py-5 border-t border-gray-200 mt-5">
+        <a class="text-sm text-blue-500 hover:underline" href="{% url 'password_reset' %}">Forgot password?</a>
+    </div>
+</div>
+{% endblock content %}
