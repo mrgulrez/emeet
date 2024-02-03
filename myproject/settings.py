@@ -84,9 +84,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Cb33*66g*F1eG525CdF-6AeCb*51BB3E',
+        'PASSWORD': 'gbAgcFBF**BCa-D-F66f6eccBBdcA*Cd',
         'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '43638',
+        'PORT': '13124',
     }
 }
 
@@ -144,7 +144,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
