@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-=ven6r4v#_xt8m#wn4@6a
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ovoting.onrender.com']
 
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
