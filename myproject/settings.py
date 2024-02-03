@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=ven6r4v#_xt8m#wn4@6ar!+8*nk*@xsv()hab)&0_crdt2h6('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOST = ["*"]
 
@@ -80,18 +80,15 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
-        'USER:': 'mydb_dyors_user',
-        'PASSWORD': 'CX60AnWdKReUp05OyBfDFzKRQ3a4UddO',
-        'HOST': 'dpg-cmv1vtn109ks73b87rl0-a',
-        'PORT': '5432',
+if not DEBUG:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
-
-DATABASES['default'] = dj_database_url.config("postgres://mydb_dyor_user:CX60AnWdKReUp05OyBfDFzKRQ3a4UddO@dpg-cmv1vtn109ks73b87rl0-a.oregon-postgres.render.com/mydb_dyor")
 
 # postgres://mydb_dyor_user:CX60AnWdKReUp05OyBfDFzKRQ3a4UddO@dpg-cmv1vtn109ks73b87rl0-a.oregon-postgres.render.com/mydb_dyor
 
