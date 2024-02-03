@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,13 +83,17 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'gbAgcFBF**BCa-D-F66f6eccBBdcA*Cd',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '13124',
+        'NAME': 'mydb',
+        'USER:': 'mydb_dyors_user',
+        'PASSWORD': 'CX60AnWdKReUp05OyBfDFzKRQ3a4UddO',
+        'HOST': 'dpg-cmv1vtn109ks73b87rl0-a',
+        'PORT': '5432',
     }
 }
+
+DATABASES['default'] = dj_database_url.config("postgres://mydb_dyor_user:CX60AnWdKReUp05OyBfDFzKRQ3a4UddO@dpg-cmv1vtn109ks73b87rl0-a.oregon-postgres.render.com/mydb_dyor")
+
+# postgres://mydb_dyor_user:CX60AnWdKReUp05OyBfDFzKRQ3a4UddO@dpg-cmv1vtn109ks73b87rl0-a.oregon-postgres.render.com/mydb_dyor
 
 
 # Password validation
@@ -147,13 +152,5 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-import dj_database_url
-
-if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.config(
-        conn_max_age=500,
-        conn_health_checks=True,
-    )
