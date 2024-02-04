@@ -9,11 +9,7 @@
       <header class="mb-4 flex items-center justify-between py-4 md:py-8">
         <!-- logo - start -->
         <a href="/" class="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl" aria-label="logo">
-          <svg width="95" height="94" viewBox="0 0 95 94" class="h-auto w-6 text-indigo-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-          </svg>
-  
-          TopG
+          {% include "logo.html" %} 
         </a>
         <!-- logo - end -->
   
@@ -60,7 +56,154 @@
 
 
 {% block content %}
-    <h1>About</h1>
-    <p class="lead">This is a simple web application that allows you to manage your tasks.</p>
 
+<div class="bg-white">
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-8 lg:px-16">
+      <div class="mb-12 text-center">
+        <h2 class="text-4xl font-extrabold text-gray-800 leading-tight mb-6 lg:text-5xl">About TopG - Your Technical Portal</h2>
+        <p class="text-gray-600 mx-auto max-w-screen-md lg:text-lg">
+          Welcome to TopG, your ultimate destination for all things tech! Explore the boundless world of technology with us, where innovation meets knowledge, and passion fuels creativity.
+        </p>
+      </div>
+  
+      <div class="grid gap-12 lg:grid-cols-2">
+          <!-- Services Offered - start -->
+        <div class="lg:col-span-2 hover:bg-gray-200 transition duration-300 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Services We Offer</h3>
+            
+            <div class="grid gap-4 md:grid-cols-2">
+            <!-- Web Design -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">Web Design</h4>
+                <p class="text-gray-700">
+                Elevate your online presence with our professional web design services. Our team of skilled designers crafts visually appealing and user-friendly websites tailored to meet your specific needs.
+                </p>
+            </div>
+        
+            <!-- App Development -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">App Development</h4>
+                <p class="text-gray-700">
+                Turn your app ideas into reality with our expert app development services. From concept to deployment, we guide you through the entire development process, ensuring a seamless and feature-rich application.
+                </p>
+            </div>
+        
+            <!-- UI/UX Design -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">UI/UX Design</h4>
+                <p class="text-gray-700">
+                User experience is at the heart of our UI/UX design services. We create intuitive and visually appealing interfaces that enhance user engagement and satisfaction, making your digital products stand out.
+                </p>
+            </div>
+        
+            <!-- Software Development -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">Software Development</h4>
+                <p class="text-gray-700">
+                Leverage our expertise in software development to build robust and scalable solutions. Whether it's custom software or enterprise-level applications, we deliver high-quality solutions tailored to your requirements.
+                </p>
+            </div>
+        
+            <!-- IT Consulting -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">IT Consulting</h4>
+                <p class="text-gray-700">
+                Gain strategic insights and expert advice with our IT consulting services. We assess your technology needs, provide tailored recommendations, and help you implement solutions that drive business success.
+                </p>
+            </div>
+        
+            <!-- Digital Marketing -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">Digital Marketing</h4>
+                <p class="text-gray-700">
+                Enhance your online presence and reach a wider audience with our digital marketing services. From SEO and social media management to content marketing, we develop strategies to boost your brand's visibility.
+                </p>
+            </div>
+        
+            <!-- Cybersecurity Solutions -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">Cybersecurity Solutions</h4>
+                <p class="text-gray-700">
+                Safeguard your digital assets with our comprehensive cybersecurity solutions. We assess vulnerabilities, implement robust security measures, and provide ongoing support to protect your data and systems.
+                </p>
+            </div>
+        
+            <!-- Emerging Technologies -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <h4 class="text-xl font-semibold mb-2 text-indigo-600">Emerging Technologies</h4>
+                <p class="text-gray-700">
+                Stay ahead in the tech landscape with our expertise in emerging technologies. Whether it's blockchain, AI, or IoT, we help you harness the power of cutting-edge innovations for your business growth.
+                </p>
+            </div>
+            </div>
+        </div>
+        <!-- Services Offered - end -->
+
+        <!-- Overview - start -->
+        <div class="lg:col-span-1 hover:bg-gray-200 transition duration-300 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Our Mission</h3>
+            <p class="text-gray-700">
+            At TopG, our mission is to empower individuals with knowledge and insights into the latest technological advancements. We strive to create a dynamic platform that fosters learning, collaboration, and innovation.
+            </p>
+        </div>
+        <!-- Overview - end -->
+        
+        <!-- Team - start -->
+        <div class="lg:col-span-1 hover:bg-gray-200 transition duration-300 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Our Team</h3>
+            <p class="text-gray-700">
+            Behind every line of code and every piece of content is a dedicated team of tech enthusiasts at TopG. Our diverse group of experts collaborates to bring you curated and valuable resources, ensuring a rich and engaging experience on our platform.
+            </p>
+        </div>
+        <!-- Team - end -->
+        
+        <!-- Vision - start -->
+        <div class="lg:col-span-2 hover:bg-gray-200 transition duration-300 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Our Vision</h3>
+            <p class="text-gray-700">
+            We envision a future where technology is accessible to all, and individuals can leverage its power to drive positive change. TopG aims to be a catalyst for this vision by providing a comprehensive resource hub for tech enthusiasts, beginners, and experts alike.
+            </p>
+            <p class="text-gray-700">
+            Our commitment is to be a leading platform that empowers individuals to explore, learn, and excel in the ever-evolving world of technology.
+            </p>
+        </div>
+        <!-- Vision - end -->
+        
+        <!-- Values - start -->
+        <div class="lg:col-span-2 hover:bg-gray-200 transition duration-300 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Our Values</h3>
+            <p class="text-gray-700">
+            Integrity, innovation, and inclusivity are at the core of our values at TopG. We are committed to delivering accurate and up-to-date information, fostering a culture of continuous learning, and ensuring that our platform is welcoming to individuals from all walks of life.
+            </p>
+        </div>
+        <!-- Values - end -->
+        
+        <!-- Community Engagement - start -->
+        <div class="lg:col-span-1 hover:bg-gray-200 transition duration-300 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Community Engagement</h3>
+            <p class="text-gray-700">
+            TopG actively engages with its community through forums, webinars, and collaborative projects. Our goal is to create a vibrant and supportive community where individuals can connect, share ideas, and learn from each other.
+            </p>
+        </div>
+        <!-- Community Engagement - end -->
+        
+        <!-- Technology Focus - start -->
+        <div class="lg:col-span-1 hover:bg-gray-200 transition duration-300 rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Technology Focus</h3>
+            <p class="text-gray-700">
+            Our portal at TopG covers a wide array of technological domains, including programming languages, web development, artificial intelligence, cybersecurity, and more. We strive to keep our audience updated with the latest trends and best practices in the tech industry.
+            </p>
+            <p class="text-gray-700">
+            Explore our platform to stay ahead in the ever-evolving world of technology.
+            </p>
+        </div>
+        <!-- Technology Focus - end -->
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
 {% endblock %}

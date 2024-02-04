@@ -4,6 +4,14 @@
 {% block title %}Log In{% endblock %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+    {% load static %}
+    <script>
+        window.location.href = "{% url 'home' %}";
+    </script>
+{% endif %}
+
 <div class="max-w-md mx-auto p-8 bg-white rounded-md shadow-md mt-10">
     <h2 class="text-3xl font-semibold mb-6 text-center">Log In</h2>
     <form method="post" class="space-y-4">

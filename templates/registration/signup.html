@@ -2,8 +2,165 @@
 {% load tailwind_filters %}
 
 {% block content %}
+{% if user.is_authenticated %}
+      <!-- text - start -->
+      <div class="mb-10 md:mb-16">
+        <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Technical Features</h2>
+      
+        <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">Explore the powerful technical features of our platform. Take a tour to discover how our cutting-edge solutions can benefit you.</p>
+      </div>
+      <!-- text - end -->
+      
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <!-- product - start -->
+        <div>
+          <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1518281361980-b26bfd556770?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlYWwlMjB0aW1lJTIwY29sbGFicmF0aW9ufGVufDB8fDB8fHww" loading="lazy" alt="Technical Feature 1" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+      
+            <span class="absolute left-0 top-3 rounded-r-lg bg-green-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Live</span>
+          </a>
+      
+          <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+              <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">Real-time Collaboration</a>
+              <span class="text-sm text-gray-500 lg:text-base">Enhance teamwork with live collaboration tools.</span>
+            </div>
+      
+        
+          </div>
+        </div>
+        <!-- product - end -->
+      
+        <!-- product - start -->
+        <div>
+          <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://plus.unsplash.com/premium_photo-1661372012626-90b9e5001cea?q=80&w=1185&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="lazy" alt="Technical Feature 2" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <span class="absolute left-0 top-3 rounded-r-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Upcomming feature</span>  
+        </a>
+      
+          <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+              <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">Advanced Analytics</a>
+              <span class="text-sm text-gray-500 lg:text-base">Utilize powerful analytics tools for data-driven insights.</span>
+            </div>
+      
+            
+          </div>
+        </div>
+        <!-- product - end -->
+      
+        <!-- product - start -->
+        <div>
+          <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://t4.ftcdn.net/jpg/05/56/96/67/240_F_556966732_y3mT9mta7zLRl1m3z4Yc6cmHlt7xMsSU.jpg" loading="lazy" alt="Technical Feature 3" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <span class="absolute left-0 top-3 rounded-r-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Upcomming feature</span>
+          </a>
+      
+          <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+              <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">Secure Infrastructure</a>
+              <span class="text-sm text-gray-500 lg:text-base">Ensure data integrity with our robust security measures.</span>
+            </div>
+          </div>
+        </div>
+        <!-- product - end -->
+      
+        <!-- product - start -->
+        <div>
+          <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="lazy" alt="Technical Feature 4" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <span class="absolute left-0 top-3 rounded-r-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Upcomming feature</span>
+          </a>
+      
+          <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+              <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">Automated Processes</a>
+              <span class="text-sm text-gray-500 lg:text-base">Streamline tasks with our efficient automation tools.</span>
+            </div>
+      
+          </div>
+        </div>
+        <!-- product - end -->
 
+        <!-- product - start -->
+        <div>
+            <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://t3.ftcdn.net/jpg/05/66/39/78/240_F_566397830_Eyld3KDOWRcqsQUWuZmC94jiiyud2Vv1.jpg" loading="lazy" alt="Technical Feature 5" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <span class="absolute left-0 top-3 rounded-r-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Upcomming feature</span>
+            </a>
+        
+            <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+                <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">AI-Powered Insights</a>
+                <span class="text-sm text-gray-500 lg:text-base">Harness the power of artificial intelligence for actionable insights.</span>
+            </div>
+        
+            </div>
+        </div>
+        <!-- product - end -->
+        
+        <!-- product - start -->
+        <div>
+            <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_A4Yr6SKhqqnQ8RREm0y8_SWQFLE1rQZ2gA26aqRbbQ&s" loading="lazy" alt="Technical Feature 6" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <span class="absolute left-0 top-3 rounded-r-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Upcomming feature</span>
+            </a>
+        
+            <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+                <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">Scalable Infrastructure</a>
+                <span class="text-sm text-gray-500 lg:text-base">Build and scale your projects effortlessly with our robust infrastructure.</span>
+            </div>
+        
+            </div>
+        </div>
+        <!-- product - end -->
+        
+        <!-- product - start -->
+        <div>
+            <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://miro.medium.com/v2/resize:fit:1400/1*jnyusXzJsxX-XtaMu8Xzpg.jpeg" loading="lazy" alt="Technical Feature 7" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <span class="absolute left-0 top-3 rounded-r-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Upcomming feature</span>
+            </a>
+        
+            <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+                <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">Developer-Friendly APIs</a>
+                <span class="text-sm text-gray-500 lg:text-base">Simplify integration with our developer-friendly APIs.</span>
+            </div>
+        
+            </div>
+        </div>
+        <!-- product - end -->
+        
+        <!-- product - start -->
+        <div>
+            <a href="#" class="group relative block h-96 overflow-hidden rounded-t-lg bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1545063328-c8e3faffa16f?q=80&w=1182&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="lazy" alt="Technical Feature 8" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <span class="absolute left-0 top-3 rounded-r-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">Upcomming feature</span>
+            </a>
+        
+            <div class="flex items-start justify-between gap-2 rounded-b-lg bg-gray-100 p-4">
+            <div class="flex flex-col">
+                <a href="#" class="font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-lg">Customizable Dashboards</a>
+                <span class="text-sm text-gray-500 lg:text-base">Tailor your experience with fully customizable dashboards.</span>
+            </div>
+        
+            </div>
+        </div>
+        <!-- product - end -->
+      </div>
+  </div>
+</div>
+      
+
+
+
+
+
+{% else %}
 <div class="max-w-lg mx-auto">
+    <h2 class="text-2xl font-bold text-gray-800 text-center">Signup to explore the feature</h2>
     <form method="post" class="mt-5">
         {% csrf_token %}
         {{ form|crispy }}
@@ -15,4 +172,5 @@
         <a class="hover:text-blue-500" href="{% url 'login' %}">Already have an account?</a>
     </div>
 </div>
+{% endif %}
 {% endblock content %}
