@@ -12,18 +12,25 @@
     </script>
 {% endif %}
 
-<div class="max-w-md mx-auto p-8 bg-white rounded-md shadow-md mt-10">
-    <h2 class="text-3xl font-semibold mb-6 text-center">Log In</h2>
-    <form method="post" class="space-y-4">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type='submit'
-            class="w-full text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md focus:outline-none">
-            Login
-        </button>
-    </form>
-    <div class="py-5 border-t border-gray-200 mt-5">
-        <a class="text-sm text-blue-500 hover:underline" href="{% url 'password_reset' %}">Forgot password?</a>
+<div class="bg-slate-100 p-7 max-w-xl mx-auto rounded-xl">
+    <div class="max-w-lg p-8 mx-auto bg-white rounded-lg shadow-md">
+        <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-500 text-white text-2xl font-semibold shadow-lg">🔒</div>
+        
+        <form method="post" class="flex flex-col gap-4">
+            {% csrf_token %}
+            <div class="mb-4">
+                {{ form|crispy }}
+            </div>
+            <button class="w-full py-3 text-white bg-indigo-500 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring focus:border-indigo-700 transition duration-300">Log in</button>
+        </form>
+
+        <div class="mt-5 py-5 border-t">
+            <p class="text-center text-sm text-gray-500">Don't have an account? <a href="{% url 'signup' %}" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700">Register here</a></p>
+        </div>
     </div>
 </div>
+
+
+
+
 {% endblock content %}
