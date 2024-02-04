@@ -6,14 +6,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-
+<header>
+    {% block header %} {% include "header.html" %} {% endblock %}
+</header>
 <body>
     <main>
-        {% block navigation %} {% endblock %}
-        {% block content %} {% endblock %}
+        <div class="bg-white pb-6 sm:pb-8 lg:pb-12">
+            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                 {% block content %} {% endblock %}
+            </div>
+        </div>
     </main>
+
 </body>
 
-{% block footer %}{% endblock %}
+<footer class="sticky top-[100vh]">
+    {% include "footer.html" %}
+</footer>
 
 </html>
