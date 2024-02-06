@@ -184,7 +184,6 @@
         </div>
         <div class="item"><a href="{% url 'myapp:about' %}"><i class="fas fa-info-circle"></i>About</a></div>
         <div class="item"><a href=""><i class="fas fa-envelope"></i>Contact</a></div>
-      </div>
       <div class="flex items-center justify-center">
         {% if user.is_authenticated %}
           <form action="{% url 'logout' %}" method="post">
@@ -202,6 +201,7 @@
           </a>
         {% endif %}
       </div>
+    </div>
       
     </div>
  
