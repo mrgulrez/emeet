@@ -1,42 +1,230 @@
-<button id="toggleSidebar" type="button" class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-    </svg>
-    Menu
-  </button>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+ 
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: "Poppins", sans-serif;
+     }
+ 
+     .side-bar {
+       background: rgba(248, 248, 248, 0.8);
+       backdrop-filter: blur(15px);
+       width: 100vw;
+       position: fixed;
+       top: 0;
+       right: -100vw;
+       overflow-y: auto;
+       transition: 0.6s ease;
+       transition-property: right;
+       z-index: 999;
+       height: 100vh;
+       padding: 20px;
+     }
+ 
+     .side-bar.active {
+       right: 0;
+     }
+ 
+     h1 {
+       text-align: center;
+       font-weight: 500;
+       font-size: 25px;
+       padding-bottom: 13px;
+       font-family: sans-serif;
+       letter-spacing: 2px;
+     }
+ 
+     .side-bar .menu {
+       width: 100%;
+       margin-top: 30px;
+     }
+ 
+     .side-bar .menu .item {
+       position: relative;
+       cursor: pointer;
+     }
+ 
+     .side-bar .menu .item a {
+       color: black;
+       font-size: 24px;
+       text-decoration: none;
+       display: block;
+       padding: 5px 30px;
+       line-height: 60px;
+     }
+ 
+     .side-bar .menu .item a:hover {
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 0 50px 50px 0;
+       transition: 0.3s ease;
+     }
+ 
+     .side-bar .menu .item i {
+       margin-right: 15px;
+     }
+ 
+     .side-bar .menu .item a .dropdown {
+       position: absolute;
+       right: 0;
+       margin: 20px;
+       transition: 0.3s ease;
+     }
+ 
+     .side-bar .menu .item .sub-menu {
+       display: none;
+     }
+ 
+     .side-bar .menu .item .sub-menu a {
+       padding-left: 80px;
+     }
+ 
+     .rotate {
+       transform: rotate(90deg);
+     }
+ 
+     .close-btn {
+       position: absolute;
+       color: black;
+        font-size: 35px;
+       right: 0px;
+       margin: 15px;
+       cursor: pointer;
+     }
+ 
+     .menu-btn {
+       position: absolute;
+       color: rgb(0, 0, 0);
+       font-size: 35px;
+       margin: 25px;
+       cursor: pointer;
+       right: 0; 
+     }
+ 
+     .main {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 50px;
+     }
+ 
+     .main h1 {
+       font-size: 60px;
+       text-align: center;
+       line-height: 80px;
+     }
+ 
+     @media (max-width: 900px) {
+       .main h1 {
+         font-size: 40px;
+         line-height: 60px;
+       }
+     }
+    </style>
+  </head>
+  <body>
+ 
+    <div class="menu-btn">
+      <button class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+        </svg>
+        Menu
+      </button>
+    </div>
+ 
+<div class="side-bar">
+<header>
+        <div class="close-btn text-black">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="h-28 w-28 rounded-full overflow-hidden">
+            {% if user.is_authenticated %}
+              <img src="https://media.licdn.com/dms/image/D4D03AQH0i__tRPsmxw/profile-displayphoto-shrink_400_400/0/1665908267990?e=1712793600&v=beta&t=uJBa6zcQCOg4SI5uDThR2KWPRfgKOXjBhODIhF3kNEk" alt="user image" class="w-full h-full object-cover" />
+            {% else %}
+              <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2FShuu026%2Frandom-profile-pic%2F&psig=AOvVaw1_inAEK4_mR3CGt2ayS77v&ust=1707311509502000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLiNmJ7lloQDFQAAAAAdAAAAABAJ" alt="user image" class="w-full h-full object-cover" />
+            {% endif %}
+          </div>
+        </div>
+        {% if user.is_authenticated %}
+          <h1 class="m-3 font-bold">{{ user.username }}</h1>
+        {% else %}
+          <h1>Guest</h1>
+        {% endif %}
+</header>
 
-  <!-- Your sidebar -->
-  <div id="sidebar" class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
-    {% include "sidebar.html" %}
 
-    <div id="sidebar" class="{% if show_sidebar %}lg:block{% else %}hidden{% endif %}">
-      <!-- Cancel option at the top of the sidebar -->
-      <div class="flex justify-end px-4 py-2">
-        <button id="cancelSidebar" type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
-          Cancel
-        </button>
+      <div class="menu">
+        <div class="item"><a href="#"><i class="fas fa-desktop"></i>Dashboard</a></div>
+        <div class="item"><a href="{% url 'home' %}"><i class="fas fa-desktop"></i>Home</a></div>
+        <div class="item"><a href="{% url 'signup' %}"><i class="fas fa-desktop"></i>Take a tour</a></div>
+        <div class="item">
+          <a class="sub-btn"><i class="fas fa-table"></i>Tasks<i class="fas fa-angle-right dropdown"></i></a>
+          <div class="sub-menu">
+            <a href="" class="sub-item">Task 1</a>
+            <a href="" class="sub-item">Task 2</a>
+            <a href="" class="sub-item">Task 3</a>
+          </div>
+        </div>
+        <div class="item"><a href="{% url 'myapp:features' %}"><i class="fas fa-th"></i>Features</a></div>
+        <div class="item">
+          <a class="sub-btn"><i class="fas fa-cogs"></i>Settings<i class="fas fa-angle-right dropdown"></i></a>
+          <div class="sub-menu">
+            <a href="#" class="sub-item">Update Profile</a>
+            <a href="#" class="sub-item">Setting-1</a>
+          </div>
+        </div>
+        <div class="item"><a href="{% url 'myapp:about' %}"><i class="fas fa-info-circle"></i>About</a></div>
+        <div class="item"><a href=""><i class="fas fa-envelope"></i>Contact</a></div>
+      </div>
+      <div class="flex items-center justify-center">
+        {% if user.is_authenticated %}
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <i class="fa fa-sign-out"></i> Logout
+            </button>
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <i class="fa fa-sign-in"></i> Login
+          </a>
+          <a href="{% url 'signup' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4">
+            <i class="fa fa-sign-up"></i> Signup
+          </a>
+        {% endif %}
       </div>
       
-  </div>
-
-  <script>
-    const toggleSidebarButton = document.getElementById('toggleSidebar');
-    const cancelSidebarButton = document.getElementById('cancelSidebar');
-    const sidebar = document.getElementById('sidebar');
-  
-    toggleSidebarButton.addEventListener('click', function() {
-      sidebar.classList.toggle('hidden');
+    </div>
+ 
+    <script type="text/javascript">
+    $(document).ready(function(){
+      //jquery for toggle sub menus
+      $('.sub-btn').click(function(){
+        $(this).next('.sub-menu').slideToggle();
+        $(this).find('.dropdown').toggleClass('rotate');
+      });
+ 
+      //jquery for expand and collapse the sidebar
+      $('.menu-btn').click(function(){
+        $('.side-bar').addClass('active');
+        $('.menu-btn').css("visibility", "hidden");
+      });
+ 
+      $('.close-btn').click(function(){
+        $('.side-bar').removeClass('active');
+        $('.menu-btn').css("visibility", "visible");
+      });
     });
-  
-    cancelSidebarButton.addEventListener('click', function() {
-      sidebar.classList.add('hidden');
-    });
-  
-    // Close sidebar when clicking outside
-    document.addEventListener('click', function(event) {
-      const isClickInside = toggleSidebarButton.contains(event.target) || sidebar.contains(event.target);
-      if (!isClickInside) {
-        sidebar.classList.add('hidden');
-      }
-    });
-  </script>
+    </script>
+ 
+  </body>
+ 
