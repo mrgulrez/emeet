@@ -12,7 +12,7 @@
        box-sizing: border-box;
        font-family: "Poppins", sans-serif;
      }
-     
+
      .side-bar {
       background: rgba(248, 248, 248, 0.8);
       backdrop-filter: blur(15px);
@@ -25,9 +25,9 @@
       transition-property: right;
       z-index: 999;
       padding: 20px;
-      /* Remove fixed height */
-      /* height: 100vh; */
+      max-height: calc(100vh - 40px); /* Adjust padding value */
     }
+    
     
  
      .side-bar.active {
