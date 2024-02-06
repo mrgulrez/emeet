@@ -12,20 +12,23 @@
        box-sizing: border-box;
        font-family: "Poppins", sans-serif;
      }
- 
+     
      .side-bar {
-       background: rgba(248, 248, 248, 0.8);
-       backdrop-filter: blur(15px);
-       width: 100vw;
-       position: fixed;
-       top: 0;
-       right: -100vw;
-       overflow-y: auto;
-       transition: 0.6s ease;
-       transition-property: right;
-       z-index: 999;
-       padding: 20px;
-     }
+      background: rgba(248, 248, 248, 0.8);
+      backdrop-filter: blur(15px);
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      right: -100vw;
+      overflow-y: auto;
+      transition: 0.6s ease;
+      transition-property: right;
+      z-index: 999;
+      padding: 20px;
+      /* Remove fixed height */
+      /* height: 100vh; */
+    }
+    
  
      .side-bar.active {
        right: 0;
