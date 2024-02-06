@@ -53,7 +53,7 @@
  
      .side-bar .menu .item a {
        color: black;
-       font-size: 24px;
+       font-size: 20px;
        text-decoration: none;
        display: block;
        padding: 5px 30px;
@@ -150,7 +150,7 @@
             {% if user.is_authenticated %}
               <img src="https://media.licdn.com/dms/image/D4D03AQH0i__tRPsmxw/profile-displayphoto-shrink_400_400/0/1665908267990?e=1712793600&v=beta&t=uJBa6zcQCOg4SI5uDThR2KWPRfgKOXjBhODIhF3kNEk" alt="user image" class="w-full h-full object-cover" />
             {% else %}
-              <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2FShuu026%2Frandom-profile-pic%2F&psig=AOvVaw1_inAEK4_mR3CGt2ayS77v&ust=1707311509502000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLiNmJ7lloQDFQAAAAAdAAAAABAJ" alt="user image" class="w-full h-full object-cover" />
+              <img src="https://cdn.iconscout.com/icon/free/png-512/free-avatar-372-456324.png?f=webp&w=512" alt="user image" class="w-full h-full object-cover" />
             {% endif %}
           </div>
         </div>
@@ -189,15 +189,15 @@
         {% if user.is_authenticated %}
           <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button type="submit" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
               <i class="fa fa-sign-out"></i> Logout
             </button>
           </form>
         {% else %}
-          <a href="{% url 'login' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <a href="{% url 'login' %}" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
             <i class="fa fa-sign-in"></i> Login
           </a>
-          <a href="{% url 'signup' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4">
+          <a href="{% url 'signup' %}" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded ml-4">
             <i class="fa fa-sign-up"></i> Signup
           </a>
         {% endif %}
