@@ -142,7 +142,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = "home" 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # new
+
+
+# Email Backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# SMTP Configuration for Hostinger's email server
+EMAIL_HOST = 'smtp.hostinger.com'  # Hostinger's SMTP server address
+EMAIL_PORT = 587  # SMTP server port (587 is commonly used for TLS/STARTTLS)
+EMAIL_USE_TLS = True  # Use TLS/STARTTLS for secure communication with SMTP server
+
+# Your email credentials (replace with your actual email credentials)
+EMAIL_HOST_USER = 'gulrez@gulrez.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'GulrezGGmai123@'  # Your email password or app-specific password
+
+# Optional: Default sender email address
+DEFAULT_FROM_EMAIL = 'gulrez@gulrez.com'  
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
