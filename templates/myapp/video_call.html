@@ -30,9 +30,9 @@ window.onload = function () {
         // @param 3: Room ID
         // @param 4: User ID
         // @param 5: Username
-    const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
+    const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 100000000) + "");
     const userID = Math.floor(Math.random() * 10000) + "";
-    const userName = "{{ name }}";
+    const userName = "userName" + userID;
     const appID = 1790095463;
     const serverSecret = "eb8127f0ce3fa61494a6a0007b19142a";
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
@@ -57,9 +57,9 @@ window.onload = function () {
            	showScreenSharingButton: true,
            	showTextChat: true,
            	showUserList: true,
-           	maxUsers: 2,
-           	layout: "Auto",
-           	showLayoutButton: false,
+           	maxUsers: 50,
+           	layout: "Grid",
+           	showLayoutButton: true,
          
             });
 }
