@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" style="border-radius: 50%;">
 
 
+
 </head>
 <header>
     {% block logo %}{% endblock logo %}
@@ -28,5 +29,18 @@
 <footer class="sticky top-[100vh]">
     {% include "footer.html" %}
 </footer>
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "ff766892-ef3e-4f78-a573-1df5753db907", // The ID of this integration.
+        region: "au-syd", // The region your integration is hosted in.
+        serviceInstanceID: "78793f4a-f6d2-4478-90f9-16a95729b3d4", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+</script>
 
 </html>
