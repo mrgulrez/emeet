@@ -33,8 +33,8 @@ window.onload = function () {
     const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 100000000) + "");
     const userID = Math.floor(Math.random() * 10000) + "";
     const userName = "{{ name }}";
-    const appID = 1790095463;
-    const serverSecret = "eb8127f0ce3fa61494a6a0007b19142a";
+    const appID = 1634072989;
+    const serverSecret = "ba66128180d59fc5c5eb98dc7f913ae8";
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
 
     
@@ -57,7 +57,7 @@ window.onload = function () {
            	showScreenSharingButton: true,
            	showTextChat: true,
            	showUserList: true,
-           	maxUsers: 50,
+           	maxUsers: 500,
            	layout: "Grid",
            	showLayoutButton: true,
          
